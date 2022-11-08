@@ -21,8 +21,7 @@ const ItemPreview = (props) => {
   const item = props.item;
 
   if (typeof props.item["image"] === "string" && !props.item["image"].length) {
-      item.image = "/placeholder.png";
-    
+    item.image = "/placeholder.png";
   }
 
   const handleClick = (ev) => {
