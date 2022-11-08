@@ -19,6 +19,16 @@ const mapDispatchToProps = (dispatch) => ({
 
 const ItemPreview = (props) => {
   const item = props.item;
+  
+  if (
+    props.item.hasOwnProperty("image") &&
+      typeof props.item["image"] === "string" &&
+      !props.item["image"].length
+  
+  ) {
+      item.image = "/placeholder.png";
+    
+  }
 
   const handleClick = (ev) => {
     ev.preventDefault();
@@ -36,7 +46,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image}
+        src={item.image || "placheolder.png"}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
