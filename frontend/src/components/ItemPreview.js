@@ -19,12 +19,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 const ItemPreview = (props) => {
   const item = props.item;
-  
-  if (
-      typeof props.item["image"] === "string" &&
-      !props.item["image"].length
-  
-  ) {
+
+  if (typeof props.item["image"] === "string" && !props.item["image"].length) {
       item.image = "/placeholder.png";
     
   }
